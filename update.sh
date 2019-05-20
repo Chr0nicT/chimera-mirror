@@ -11,15 +11,15 @@ wget "$url/Packages" 2>/dev/null
 
 if [ ! -f ./Packages ]; then
     echo "[RepoDownload3r] Packages File Not Found!"
+    echo "[RepoDownload3r] Attempting To Grab Packages.xz From: $url"
+    wget "$url/Packages.xz" 2>/dev/null
+    xz -d Packages.xz 2>/dev/null
+fi
+if [ ! -f ./Packages.xz ] && [ ! -f ./Packages ]; then
+    echo "[RepoDownload3r] Packages.xz Not Found!"
     echo "[RepoDownload3r] Attempting To Grab Packages.bz2 From: $url"
     wget "$url/Packages.bz2" 2>/dev/null
     bzip2 -d Packages.bz2 2>/dev/null
-fi
-if [ ! -f ./Packages.bz2 ] && [ ! -f ./Packages ]; then
-    echo "[RepoDownload3r] Packages.bz2 Not Found!"
-    echo "[RepoDownload3r] Attempting To Grab Packages.gz From: $url"
-    wget "$url/Packages.gz" 2>/dev/null
-    gzip -d Packages.gz 2>/dev/null
 fi
 
 if [ -f ./Packages ]; then

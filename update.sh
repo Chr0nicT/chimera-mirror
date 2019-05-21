@@ -2,7 +2,7 @@
 clear
 echo "[RepoDownload3r] Created By: @Chr0nicT"
 echo "[RepoDownload3r] Deleting old files..."
-rm -rf debs/ 2>/dev/null
+rm -rf debians/ 2>/dev/null
 rm -rf Packages 2>/dev/null
 url="https://repo.chimera.sh/"
 echo "[RepoDownload3r] Attempting To Grab Packages List From: $url"

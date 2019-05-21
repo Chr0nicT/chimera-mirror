@@ -37,11 +37,11 @@ if [ -f ./Packages ]; then
     for package in $packages_lines;
     do
         echo "[RepoDownload3r] Downloading Packages $packages_done/$packages_count"
-        wget -P ./debs/ $package 2>/dev/null
+        wget -P ./debians/ $package 2>/dev/null
         let "packages_done++"
     done
     rm Packages
-    echo "[RepoDownload3r] Finished! Files Saved Under: debs/"
+    echo "[RepoDownload3r] Finished! Files Saved Under: debians/"
 else
     echo "[RepoDownload3r] Error Getting Packages List!"
     echo "[RepoDownload3r] Is $url A Real Repo?"
